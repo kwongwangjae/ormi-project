@@ -1,26 +1,53 @@
 package com.example.demo;
 
+import java.text.DecimalFormat;
 import java.util.*;
 class Main {
-	public Boolean solution(int n){
-		if (n < 2) return false;
+	public String solution(int kr) {
+		double usa = 1332.00;
+		double jp = 884.37;
 
-		int line = (int) Math.sqrt(n) + 1;
-		for(int i = 2; i < line; i++){
-			if(n % i == 0)return false;
-		}
-		return true;
+		double usd = kr / usa;
+		double jpy = kr / jp;
+
+		DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
+
+			return "달러($) = " + decimalFormat.format(usd) + " / JPY = " + decimalFormat.format(jpy);
 	}
-
 
 	public static void main(String[] args) {
 		Main T = new Main();
 		Scanner kb = new Scanner(System.in);
-		int n = kb.nextInt();
+		int kr = kb.nextInt();
 
-		System.out.print(T.solution(n));
+		System.out.print(T.solution(kr));
 	}
 }
+
+
+// package com.example.demo;
+//
+// 	import java.util.*;
+// class Main {
+// 	public Boolean solution(int n){
+// 		if (n < 2) return false;
+//
+// 		int line = (int) Math.sqrt(n) + 1;
+// 		for(int i = 2; i < line; i++){
+// 			if(n % i == 0)return false;
+// 		}
+// 		return true;
+// 	}
+//
+//
+// 	public static void main(String[] args) {
+// 		Main T = new Main();
+// 		Scanner kb = new Scanner(System.in);
+// 		int n = kb.nextInt();
+//
+// 		System.out.print(T.solution(n));
+// 	}
+// }
 
 
 // package com.example.demo;
